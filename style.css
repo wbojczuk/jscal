@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+/* Custom Classes */
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar */
+nav {
+    margin-bottom: 1vw;
+}
+
+/* HEADERS */
+.weekday-header {
+    border: 1px solid #aaa;
+    background-color: azure;
+}
+
+.day-col {
+    border: 1px solid #aaa;
+    height: 10vw;
+    background-color: aliceblue;
+    font-size: .9em;
+}
+.day-col:hover {
+    cursor: pointer;
+    background-color: #b3dbff;
+}
+.highlightDay {
+    background-color: #fff0f0;
+    border: 1px solid #aaa;
+    height: 10vw;
+    font-size: .9em;
+}
+.highlightDay:hover {
+    background-color: #ffcccc;
+}
