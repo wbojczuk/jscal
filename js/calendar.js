@@ -1,8 +1,5 @@
 "use strict";
 
-// Header HTML variable
-var headerHTML = calcWeekdays();
-
 
 // Calendar HTML variable
 
@@ -12,13 +9,73 @@ var thisDate = new Date();
 var thisMonth = thisDate.getMonth();
 var thisDay = thisDate.getDay();
 var thisYear = thisDate.getFullYear();
+var thisDayCount = thisDate.getDate();
+
+
+var currentTemp = 0;
 
 // Days in current month variable
+
+
+// Weekday title HTML variable
+
+var titleHTML = calcMonthTitle();
+
+// DayNumber Title HTML Variable
+
+var titleDayNumHTML = calcDayNumTitle();
+
+// Grid Header HTML variable
+var headerHTML = calcWeekdays();
 var dayCount = daysInMonth();
 
 var calendarHTML = calendarTiles();
 
 
+
+
+// Calculate Weekday Title
+
+function calcMonthTitle() {
+    var monthTitle = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    return monthTitle[thisMonth];
+}
+document.getElementById("monthTitle").innerHTML = titleHTML;
+
+
+// Calculate Day Number Title
+
+function calcDayNumTitle() {
+    var str = "";
+
+    // Calc superscript to use
+    var supST = [1, 21, 31];
+    var supRD = [3, 23];
+    var supND = [2, 22];
+    var supTH = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 25, 26, 27, 28, 29, 30,];
+
+    if ( supST.includes(thisDayCount) == true) {
+        str = "st";
+    } else {
+        if ( supRD.includes(thisDayCount) == true) {
+            str = "rd";
+        } else {
+            if ( supND.includes(thisDayCount) == true) {
+                str = "nd";
+            } else {
+                if ( supTH.includes(thisDayCount) == true) {
+                str = "th";
+            } 
+                
+            }
+        }
+    }
+
+    var tempValue = thisDayCount + "<sup>" + str + "</sup>";
+    return tempValue;
+}
+document.getElementById("titleDayNumber").innerHTML = titleDayNumHTML;
 
 
 // Function to calculate weekday header names
@@ -67,6 +124,7 @@ function calendarTiles() {
     // Determine starting day of the month.
     var calHTML = "";
     var firstDay = new Date(thisYear, thisMonth, 1);
+    var tempDay = new Date(thisYear, thisMonth);
 
     var weekDay = firstDay.getDay();
 
@@ -79,18 +137,18 @@ function calendarTiles() {
     // Generate cells for all days of the month.
 
         for (let i = 1; i <= dayCount; i++) {
-            firstDay.setDate(i);
-            weekDay = firstDay.getDay();
+            tempDay.setDate(i);
+            weekDay = tempDay.getDay();
 
                 if (weekDay === 0) {calHTML += "<div class='row'>"}
                 
                 // Test for current day
                 
-                if ((i + 1) === thisDay) {
-                    calHTML += "<div class='col m-1 day-col highlightDay fw-bold'>" + i + dayEvent[i] + "</div>";
+                if ( i === thisDayCount) {
+                    calHTML += "<div class='col m-1 day-col highlightDay fw-bold'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'>" + i + dayEvent[i] + "</div></a>";
                 if (weekDay === 6) {calHTML += "</div>"}
                 } else {
-                calHTML += "<div class='col day-col m-1'>" + i + dayEvent[i] + "</div>";
+                calHTML += "<div class='col day-col m-1'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'>" + i + dayEvent[i] + "</a></div>";
                 if (weekDay === 6) {calHTML += "</div>"}
             }
         }
@@ -111,4 +169,3 @@ function calendarTiles() {
 
 // Print Testing
 document.getElementById("calendarTable").innerHTML = calendarHTML;
-document.getElementById("printTest").innerHTML = dayCount;

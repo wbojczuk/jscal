@@ -25,10 +25,32 @@
     <nav class="navbar-dark bg-dark text-light">
         <div class="navbar-brand">JavaScript Calendar</div>
     </nav>
+
+<!-- EXPANDED DAY -->
+<div class="expanded-day" id="expandedDay">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 expanded-col bg-dark">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Title -->
+<div class="calendar-wrapper" id="calendarWrapper">
+    <div class="center title">
+        <div class="title-inside">
+        <span class="month-title" id="monthTitle"></span>
+        <span class="the-title">&nbsp; The &nbsp;</span>
+        <span class="title-day-number" id="titleDayNumber"></span>
+    </div>
+    </div>
     
     <!-- Calendar -->
     <section class="calendar">
         <div class="container">
+            <div class="wrapper">
 
         <!-- Weekday Header ROW -->
         <div class="row" id="weekdayHeader">
@@ -41,12 +63,13 @@
         <div class="container" id="calendarTable">
             
         </div>
+        </div>
 
         
 
         
     </section>
-    <div id="printTest"></div>
+</div>
 
 
 
