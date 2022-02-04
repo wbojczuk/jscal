@@ -13,8 +13,11 @@ function expandDay(dayNum) {
     // "titleHTML" is from calendar.js
     document.getElementById("expandedMonth").innerHTML = titleHTML;
     document.getElementById("expandedDayNum").innerHTML = "The " + expandedDayNum;
+    if (dayEvent[dayNum] == ""){
+        document.getElementById("expandedEventsList").innerHTML = "<li class='fw-bold'>Nothing scheduled for today.</li>";
+    } else{
     document.getElementById("expandedEventsList").innerHTML = "<li class='fw-bold'>" + dayEvent[dayNum] + ".</li>";
-
+    }
     }
 
     // Calculate Expanded Day Number/Superscript
@@ -50,6 +53,7 @@ function expandDay(dayNum) {
 
 // Calculate Expanded Events List
 
-function calcExpandedEventsList() {
-
+function closeExpanded() {
+    document.getElementById("expandedDay").style.display = "none";
+    document.getElementById("calendarWrapper").style.display = "initial";
 }
