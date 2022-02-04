@@ -19,6 +19,7 @@
     <!-- My JavaScript -->
     <script src="js/events.js" defer></script>
     <script src="js/calendar.js" defer></script>
+    <script src="js/expanded.js" defer></script>
 </head>
 <body class="bg-light">
     <!-- Nav -->
@@ -30,20 +31,36 @@
 <div class="expanded-day" id="expandedDay">
     <div class="container">
         <div class="row">
-            <div class="col-12 expanded-col bg-dark">
+            <div class="col-12 expanded-col">
+                <div class="expanded-container" id="expandedContainer">
+                    <!-- Expanded TITLE -->
+            <div id="expandedTitle" class=" text-center expanded-title">
+
+                    <span class="expanded-month" id="expandedMonth"></span>
+                    <span class="expanded-day-num" id="expandedDayNum"></span>
+                 </div>
+
+
+                 <!-- Day Events List -->
+                <ul class="expanded-events-list" id="expandedEventsList">
+                    
+                </ul>
+
+            </div>
+
 
             </div>
         </div>
     </div>
 </div>
 
+
+
     <!-- Title -->
 <div class="calendar-wrapper" id="calendarWrapper">
     <div class="center title">
         <div class="title-inside">
         <span class="month-title" id="monthTitle"></span>
-        <span class="the-title">&nbsp; The &nbsp;</span>
-        <span class="title-day-number" id="titleDayNumber"></span>
     </div>
     </div>
     

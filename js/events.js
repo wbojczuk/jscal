@@ -1,6 +1,6 @@
 var dayEvent = new Array();
 
-dayEvent[1] = "<br><br> <span>The Force Awakens</span> <br> 10:45 pm <br> $15";
+dayEvent[1] = "The Force Awakens 10:45 pm $15";
 dayEvent[2] = "";
 dayEvent[3] = "";
 dayEvent[4] = "";
@@ -9,7 +9,7 @@ dayEvent[6] = "";
 dayEvent[7] = "";
 dayEvent[8] = "";
 dayEvent[9] = "";
-dayEvent[10] = "<br><br> <span>Running Like A BOSSS</span> <br> 2:00 pm";
+dayEvent[10] = "Running Like A BOSSS 2:00 pm";
 dayEvent[11] = "";
 dayEvent[12] = "";
 dayEvent[13] = "";
@@ -31,12 +31,3 @@ dayEvent[28] = "";
 dayEvent[29] = "";
 dayEvent[30] = "";
 dayEvent[31] = "";
-
-// EXPAND DAY DETAILS
-
-function expandDay(dayNum) {
-
-document.getElementById("calendarWrapper").style.display = "none";
-document.getElementById("expandedDay").style.display = "block";
-
-}

@@ -20,12 +20,9 @@ nav {
 
 .month-title {
     display: inline-block;
-    font-size: 7em;
+    font-size: 10em;
 }
 
-.title-day-number {
-    font-size: 5em;
-}
 
 .title-inside {
     display: inline-block;
@@ -35,10 +32,6 @@ nav {
     margin-bottom: 1vw;
     padding: 0 20vw;
     
-}
-
-.the-title {
-    font-size: 4em;
 }
 
 /* HEADERS */
@@ -84,8 +77,30 @@ nav {
 
 .expanded-day {
     display: none;
-    margin-top: 5vw;
+    margin-top: 4vw;
 }
 .expanded-col {
-    height: 80vh;
+    height: 85vh;
+}
+.expanded-container {
+    width: 100%;
+    height: 100%;
+    background-color: #aaa;
+    border: 1px solid transparent;
+    border-radius: 1%;
+}
+.expanded-title {
+    font-family: "Love Light", cursive;
+    border-bottom: 2px solid #000;
+    border-radius: 1%;
+    font-size: 7em;
+}
+
+/* EXPANDED EVENTS */
+
+.expanded-events-list {
+margin-top: 2vw;
+}
+.expanded-events-list li {
+    font-size: 2em;
 }
