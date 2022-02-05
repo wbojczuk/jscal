@@ -10,6 +10,7 @@ var thisMonth = thisDate.getMonth();
 var thisDay = thisDate.getDay();
 var thisYear = thisDate.getFullYear();
 var thisDayCount = thisDate.getDate();
+var currentMonthArray = new Array(31);
 
 
 var currentTemp = 0;
@@ -89,9 +90,68 @@ function calendarTiles() {
     // Determine starting day of the month.
     var calHTML = "";
     var firstDay = new Date(thisYear, thisMonth, 1);
-    var tempDay = new Date(thisYear, thisMonth);
-
+    var tempDay = new Date(thisYear, thisMonth); 
     var weekDay = firstDay.getDay();
+    var currentMonthArray = new Array(31);
+    var currentDayEvents = "";
+    var currentDayLength = 0;
+    var tempNum = -1;
+
+
+
+    // Set Month Array          
+
+    if (titleHTML == "January") {
+         currentMonthArray = january.map((x) => x);       
+    } else {
+        if (titleHTML == "February") {
+            currentMonthArray = february.map((x) => x);       
+       } else {
+        if (titleHTML == "March") {
+            currentMonthArray = march.map((x) => x);       
+       } else {
+        if (titleHTML == "April") {
+            currentMonthArray = april.map((x) => x);       
+       } else {
+        if (titleHTML == "May") {
+            currentMonthArray = may.map((x) => x);       
+       } else {
+        if (titleHTML == "June") {
+            currentMonthArray = june.map((x) => x);       
+       } else {
+        if (titleHTML == "July") {
+            currentMonthArray = july.map((x) => x);       
+       } else {
+        if (titleHTML == "August") {
+            currentMonthArray = august.map((x) => x);       
+       } else {
+        if (titleHTML == "September") {
+            currentMonthArray = september.map((x) => x);       
+       } else {
+        if (titleHTML == "October") {
+            currentMonthArray = october.map((x) => x);       
+       } else {
+        if (titleHTML == "November") {
+            currentMonthArray = november.map((x) => x);       
+       } else {
+        if (titleHTML == "December") {
+            currentMonthArray = december.map((x) => x);
+                    
+       } 
+       }
+       }
+       }
+       }
+       }
+       }
+       }
+       }
+       }
+       }
+    }
+
+
+
 
     // Generate blank cells preceding the start date.
     calHTML += "<div class='row'>";
@@ -105,15 +165,31 @@ function calendarTiles() {
             tempDay.setDate(i);
             weekDay = tempDay.getDay();
 
+            currentDayEvents = "";
+            tempNum += 1;
+
                 if (weekDay === 0) {calHTML += "<div class='row'>"}
+
+
+                // Calculate Current Day Events
                 
+                currentDayLength = currentMonthArray[tempNum].length;
+                for (let z = 0; z < currentDayLength; z++) {
+                    console.log(currentMonthArray[tempNum][z]);
+                    
+                    if (currentMonthArray[tempNum][z] != ""){
+                    currentDayEvents += "-" + currentMonthArray[tempNum][z] + "<br>";
+                    }
+                }
+
+
                 // Test for current day
                 
                 if ( i === thisDayCount) {
-                    calHTML += "<div class='col m-1 day-col highlightDay fw-bold'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'>" + i + "<br><br> <span>" + dayEvent[i] + "</span></div></a>";
+                    calHTML += "<div class='col m-1 day-col highlightDay fw-bold'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'><div>" + i + "</div><br><span class='event-tile'>" + currentDayEvents + "</span></div></a>";
                 if (weekDay === 6) {calHTML += "</div>"}
                 } else {
-                calHTML += "<div class='col day-col m-1'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'>" + i + "<br><br> <span>" + dayEvent[i] + "</span></a></div>";
+                calHTML += "<div class='col day-col m-1'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'><div>" + i + "</div><br><span class='event-tile'>" + currentDayEvents + "</span></a></div>";
                 if (weekDay === 6) {calHTML += "</div>"}
             }
         }

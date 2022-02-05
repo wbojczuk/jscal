@@ -1,23 +1,94 @@
 "use strict";
 
+var currentMonthArrayy = new Array();
+
+
+
+// Set Month Array          
+
+if (titleHTML == "January") {
+    currentMonthArrayy = january.map((x) => x);       
+} else {
+   if (titleHTML == "February") {
+       currentMonthArrayy = february.map((x) => x);       
+  } else {
+   if (titleHTML == "March") {
+       currentMonthArrayy = march.map((x) => x);       
+  } else {
+   if (titleHTML == "April") {
+       currentMonthArrayy = april.map((x) => x);       
+  } else {
+   if (titleHTML == "May") {
+       currentMonthArrayy = may.map((x) => x);       
+  } else {
+   if (titleHTML == "June") {
+       currentMonthArrayy = june.map((x) => x);       
+  } else {
+   if (titleHTML == "July") {
+       currentMonthArrayy = july.map((x) => x);       
+  } else {
+   if (titleHTML == "August") {
+       currentMonthArrayy = august.map((x) => x);       
+  } else {
+   if (titleHTML == "September") {
+       currentMonthArrayy = september.map((x) => x);       
+  } else {
+   if (titleHTML == "October") {
+       currentMonthArrayy = october.map((x) => x);       
+  } else {
+   if (titleHTML == "November") {
+       currentMonthArrayy = november.map((x) => x);       
+  } else {
+   if (titleHTML == "December") {
+       currentMonthArrayy = december.map((x) => x);
+               
+  } 
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+}
 
 // Expanded Month
 function expandDay(dayNum) {
 
     // Variable Declarations
     var expandedDayNum = calcExpandedDayNum(dayNum);
-
+    var currentDayEvents = "";
+    var currentDayLength = 0;
+    var currentDayyy = (dayNum - 1);
+    
     document.getElementById("calendarWrapper").style.display = "none";
     document.getElementById("expandedDay").style.display = "block";
+
+    currentDayLength = currentMonthArrayy[currentDayyy].length;
+
+    for (let z = 0; z < currentDayLength; z++) {
+        
+        if(currentMonthArrayy[currentDayyy][z] == "") {
+            currentDayEvents = "<li class='fw-bold'>Nothing scheduled for today.</li>";
+        } else {
+        currentDayEvents += "<li class='fw-bold'>" + currentMonthArrayy[currentDayyy][z] + ".</li>";
+        }
+
+        
+
+        
+
+
+    }
+
+    document.getElementById("expandedEventsList").innerHTML = currentDayEvents;
 
     // "titleHTML" is from calendar.js
     document.getElementById("expandedMonth").innerHTML = titleHTML;
     document.getElementById("expandedDayNum").innerHTML = "The " + expandedDayNum;
-    if (dayEvent[dayNum] == ""){
-        document.getElementById("expandedEventsList").innerHTML = "<li class='fw-bold'>Nothing scheduled for today.</li>";
-    } else{
-    document.getElementById("expandedEventsList").innerHTML = "<li class='fw-bold'>" + dayEvent[dayNum] + ".</li>";
-    }
     }
 
     // Calculate Expanded Day Number/Superscript
