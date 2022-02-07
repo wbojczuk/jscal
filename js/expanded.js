@@ -1,6 +1,11 @@
 "use strict";
 
-var currentMonthArrayy = new Array();
+
+
+// Expanded Month
+function expandDay(dayNum) {
+
+    var currentMonthArrayy = new Array();
 
 
 
@@ -54,9 +59,6 @@ if (titleHTML == "January") {
   }
   }
 }
-
-// Expanded Month
-function expandDay(dayNum) {
 
     // Variable Declarations
     var expandedDayNum = calcExpandedDayNum(dayNum);

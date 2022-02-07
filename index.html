@@ -62,11 +62,22 @@
 
 
     <!-- Title -->
-<div class="calendar-wrapper" id="calendarWrapper">
-    <div class="center title">
-        <div class="title-inside">
-        <span class="month-title" id="monthTitle"></span>
+    <div id="calendarWrapper">
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-1"><a href="#" class="bi bi-chevron-left switch-button" onclick="backMonth();"></a></div>
+
+        <div class="col-6 text-center"><span class="month-title" id="monthTitle"></span></div>
+
+        <div class="col-1"><a href="#" class="bi bi-chevron-right switch-button" onclick="forwardMonth();"></a></div>
+
+        <div class="col-2"></div>
+
+
     </div>
+
     </div>
     
     <!-- Calendar -->
@@ -91,6 +102,7 @@
 
         
     </section>
+</div>
 </div>
 
 

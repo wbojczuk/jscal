@@ -12,6 +12,11 @@ var thisYear = thisDate.getFullYear();
 var thisDayCount = thisDate.getDate();
 var currentMonthArray = new Array(31);
 
+var tempMonth = parseInt(thisMonth);
+var tempNum = -1;
+
+var tempDate = thisDate;
+
 
 var currentTemp = 0;
 
@@ -92,10 +97,9 @@ function calendarTiles() {
     var firstDay = new Date(thisYear, thisMonth, 1);
     var tempDay = new Date(thisYear, thisMonth); 
     var weekDay = firstDay.getDay();
-    var currentMonthArray = new Array(31);
     var currentDayEvents = "";
     var currentDayLength = 0;
-    var tempNum = -1;
+    
 
 
 
@@ -162,11 +166,12 @@ function calendarTiles() {
     // Generate cells for all days of the month.
 
         for (let i = 1; i <= dayCount; i++) {
+            tempNum += 1;
             tempDay.setDate(i);
             weekDay = tempDay.getDay();
 
             currentDayEvents = "";
-            tempNum += 1;
+            
 
                 if (weekDay === 0) {calHTML += "<div class='row'>"}
 
@@ -175,10 +180,10 @@ function calendarTiles() {
                 
                 currentDayLength = currentMonthArray[tempNum].length;
                 for (let z = 0; z < currentDayLength; z++) {
-                    console.log(currentMonthArray[tempNum][z]);
+                    
                     
                     if (currentMonthArray[tempNum][z] != ""){
-                    currentDayEvents += "-" + currentMonthArray[tempNum][z] + "<br>";
+                    currentDayEvents += "<span class='middot'>&middot;</span>" + currentMonthArray[tempNum][z] + "<br>";
                     }
                 }
 
@@ -208,5 +213,97 @@ function calendarTiles() {
         return calHTML;
 }
 
-// Print Testing
+// Print calendarHTML
 document.getElementById("calendarTable").innerHTML = calendarHTML;
+
+
+
+
+// Swap Months
+
+function forwardMonth() {
+// RESET VARIABLES
+currentTemp = 0;
+titleHTML = "";
+tempMonth += 1;
+tempNum = -1;
+
+console.log(tempMonth);
+
+
+
+    thisDate.setMonth(tempMonth);
+
+    setTimeout(function() {
+     
+    headerHTML = calcWeekdays();
+    
+    thisMonth = thisDate.getMonth();
+    dayCount = daysInMonth();
+    thisYear = thisDate.getFullYear();
+    
+}, 5);
+
+
+
+
+// Reloading outputs
+setTimeout(function() {
+    
+thisDay = thisDate.getDay();
+thisYear = thisDate.getFullYear();
+    titleHTML = calcMonthTitle();
+}, 10);
+    setTimeout(function() {
+    calendarHTML = calendarTiles();
+}, 50);
+ 
+setTimeout(function() {
+document.getElementById("monthTitle").innerHTML = titleHTML;
+document.getElementById("weekdayHeader").innerHTML = headerHTML;
+document.getElementById("calendarTable").innerHTML = calendarHTML;
+}, 90);
+
+}
+
+// Backward Month
+
+function backMonth() {
+    // RESET VARIABLES
+    currentTemp = 0;
+    titleHTML = "";
+    tempMonth -= 1;
+    tempNum = -1;
+    
+    console.log(currentMonthArray.length);
+    
+        thisDate.setMonth(tempMonth);
+         
+        headerHTML = calcWeekdays();
+        
+        thisMonth = thisDate.getMonth();
+        thisYear = thisDate.getFullYear();
+        thisDay = thisDate.getDay();
+        dayCount = daysInMonth();
+    
+    
+    
+    
+    // Reloading outputs
+    setTimeout(function() {
+        
+    thisDay = thisDate.getDay();
+    thisYear = thisDate.getFullYear();
+        titleHTML = calcMonthTitle();
+    }, 10);
+        setTimeout(function() {
+        calendarHTML = calendarTiles();
+    }, 50);
+     
+    setTimeout(function() {
+    document.getElementById("monthTitle").innerHTML = titleHTML;
+    document.getElementById("weekdayHeader").innerHTML = headerHTML;
+    document.getElementById("calendarTable").innerHTML = calendarHTML;
+}, 90);
+    
+    }

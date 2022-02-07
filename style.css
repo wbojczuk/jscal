@@ -20,19 +20,30 @@ nav {
 
 }
 
+
+/* Switch buttons styling */
+
+.switch-button {
+    color: #000;
+    font-size: 8em;
+}
+
+.switch-button:hover {
+    color: #ccc;
+}
+
 /* Title Styling */
 
 .month-title {
     display: inline-block;
     font-size: 10em;
+    font-family: "Love Light", cursive;
 }
 
 
 .title-inside {
     display: inline-block;
-    font-family: "Love Light", cursive;
-    border-bottom: 2px solid #000;
-    border-radius: 1%;
+    
     margin-bottom: 1vw;
     padding: 0 20vw;
     
@@ -65,6 +76,11 @@ nav {
 }
 .highlightDay:hover {
     background-color: #ffcccc;
+}
+
+/* EVENT MIDDOT STYLING */
+.middot {
+    font-size: 2em;
 }
 
 /* Day Link Styling */
@@ -125,3 +141,4 @@ margin-top: 2vw;
 .close-expanded-button:hover {
     color: #ccc;
 }
+
