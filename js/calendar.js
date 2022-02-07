@@ -5,6 +5,7 @@
 
 
 // Date Variables
+var currentDate = new Date();
 var thisDate = new Date();
 var thisMonth = thisDate.getMonth();
 var thisDay = thisDate.getDay();
@@ -14,7 +15,6 @@ var currentMonthArray = new Array(31);
 
 var tempMonth = parseInt(thisMonth);
 var tempNum = -1;
-
 var tempDate = thisDate;
 
 
@@ -190,7 +190,7 @@ function calendarTiles() {
 
                 // Test for current day
                 
-                if ( i === thisDayCount) {
+                if ( i === currentDate.getDate() && thisMonth == currentDate.getMonth() && thisYear == currentDate.getFullYear() ) {
                     calHTML += "<div class='col m-1 day-col highlightDay fw-bold'><a href='#' id='dayLink' class='day-link' onclick='expandDay(" + i + ");'><div>" + i + "</div><br><span class='event-tile'>" + currentDayEvents + "</span></div></a>";
                 if (weekDay === 6) {calHTML += "</div>"}
                 } else {
