@@ -1,0 +1,34 @@
+.expanded-years {
+    display: none;
+    height: 100vh;
+}
+
+.years-col {
+    border: 1px solid #000;
+    height: 10vw;
+    width: 8vw;
+}
+
+.years-col:hover {
+    background-color: azure;
+}
+.view-years-link {
+    font-size: 1.5vw;
+    color: #000;
+}
+
+.years-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 3vw;
+}
+
+.years-link:hover {
+    color: #ccc;
+}

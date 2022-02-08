@@ -68,7 +68,26 @@
 
 <!-- EXPANDED MONTHS -->
 <div class="expanded-months center" id="expandedMonths">
+
+    
+
 <div class="container">
+    <!-- VIEW YEARS LINK -->
+    <div class="row">
+        <div class="col-2">
+            <a class="view-years-link" href="#" onclick="viewYears();">
+                <br>
+                <i class="bi bi-chevron-left"></i>
+                <span>Years</span>
+            </a>
+        </div>
+        <div class="col-10"></div>
+    </div>
+    <div class="row">
+    <!-- MONTH TITLE -->
+        <div class="col-12 text-center"><span class="month-title">Months</span></div>
+     </div>
+
     <div class="row">
         <div class="col m-2 months-col">
             <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(0);"><span>January</span></a>
@@ -116,6 +135,30 @@
 </div>
 </div>
 
+<!-- EXPANDED YEARS -->
+
+<div class="expanded-years center" id="expandedYears">
+    <div class="container" id="yearContainer">
+        <div class="row">
+            <div class="col-1"></div>
+    
+    
+            <!-- BACK YEAR LINK -->
+            <div class="col-1"><a href="#" class="bi bi-chevron-left switch-button" onclick="backYear();"></a></div>
+    
+            <!-- YEAR TITLE -->
+            <div class="col-8 text-center"><span class="year-title text-center">YEARS</span></div>
+    
+    
+            <!-- FORWARD YEAR LINK -->
+            <div class="col-1"><a href="#" class="bi bi-chevron-right switch-button" onclick="forwardYear();"></a></div>
+    
+            <div class="col-1"></div>
+        </div>
+
+
+    </div>
+</div>
 
 
 
