@@ -15,7 +15,7 @@ var currentMonthArray = new Array(31);
 
 var tempMonth = parseInt(thisMonth);
 var tempNum = -1;
-var tempDate = thisDate;
+var tempDate = new Date();
 
 
 var currentTemp = 0;
@@ -26,6 +26,7 @@ var currentTemp = 0;
 // Weekday title HTML variable
 
 var titleHTML = calcMonthTitle();
+var yearTitleHTML = thisYear;
 
 
 
@@ -45,7 +46,10 @@ function calcMonthTitle() {
 
     return monthTitle[thisMonth];
 }
+// PRINT MONTH TITLE
 document.getElementById("monthTitle").innerHTML = titleHTML;
+// PRINT YEAR TITLE
+document.getElementById("yearTitle").innerHTML = yearTitleHTML;
 
 
 
@@ -223,25 +227,23 @@ document.getElementById("calendarTable").innerHTML = calendarHTML;
 
 function forwardMonth() {
 // RESET VARIABLES
+
+
+
+
+
 currentTemp = 0;
 titleHTML = "";
 tempMonth += 1;
 tempNum = -1;
+thisDate.setMonth(tempMonth);
 
-console.log(tempMonth);
-
-
-
-    thisDate.setMonth(tempMonth);
-
-    setTimeout(function() {
-     
-    headerHTML = calcWeekdays();
+setTimeout(function() {
     
-    thisMonth = thisDate.getMonth();
-    dayCount = daysInMonth();
-    thisYear = thisDate.getFullYear();
-    
+    if (tempMonth == 12) {
+        tempMonth = 0;
+    }
+
 }, 5);
 
 
@@ -249,16 +251,30 @@ console.log(tempMonth);
 
 // Reloading outputs
 setTimeout(function() {
-    
+    thisYear = thisDate.getFullYear();
+    thisMonth = thisDate.getMonth();
+    thisDay = thisDate.getDay();
+    dayCount = daysInMonth();
+    headerHTML = calcWeekdays();
+
+    console.log(thisDate.getFullYear());
+
 thisDay = thisDate.getDay();
-thisYear = thisDate.getFullYear();
     titleHTML = calcMonthTitle();
+     
+
 }, 10);
     setTimeout(function() {
     calendarHTML = calendarTiles();
+    yearTitleHTML = thisYear;
 }, 50);
  
 setTimeout(function() {
+    // PRINT VARIABLES
+
+    // PRINT YEAR TITLE
+    document.getElementById("yearTitle").innerHTML = yearTitleHTML;
+
 document.getElementById("monthTitle").innerHTML = titleHTML;
 document.getElementById("weekdayHeader").innerHTML = headerHTML;
 document.getElementById("calendarTable").innerHTML = calendarHTML;
@@ -266,44 +282,60 @@ document.getElementById("calendarTable").innerHTML = calendarHTML;
 
 }
 
+
 // Backward Month
 
 function backMonth() {
     // RESET VARIABLES
+    
+    
     currentTemp = 0;
     titleHTML = "";
     tempMonth -= 1;
     tempNum = -1;
+    thisDate.setMonth(tempMonth);
     
-    console.log(currentMonthArray.length);
-    
-        thisDate.setMonth(tempMonth);
-         
-        headerHTML = calcWeekdays();
+    setTimeout(function() {
         
-        thisMonth = thisDate.getMonth();
-        thisYear = thisDate.getFullYear();
-        thisDay = thisDate.getDay();
-        dayCount = daysInMonth();
+        if (tempMonth == -1) {
+            tempMonth = 11;
+        }
+    
+    }, 5);
     
     
     
     
     // Reloading outputs
     setTimeout(function() {
-        
+        thisYear = thisDate.getFullYear();
+        thisMonth = thisDate.getMonth();
+        thisDay = thisDate.getDay();
+        dayCount = daysInMonth();
+        headerHTML = calcWeekdays();
+    
+        console.log(thisDate.getFullYear());
+    
     thisDay = thisDate.getDay();
-    thisYear = thisDate.getFullYear();
         titleHTML = calcMonthTitle();
+         
+    
     }, 10);
         setTimeout(function() {
         calendarHTML = calendarTiles();
+        yearTitleHTML = thisYear;
     }, 50);
      
     setTimeout(function() {
+        // PRINT VARIABLES
+    
+        // PRINT YEAR TITLE
+        document.getElementById("yearTitle").innerHTML = yearTitleHTML;
+    
     document.getElementById("monthTitle").innerHTML = titleHTML;
     document.getElementById("weekdayHeader").innerHTML = headerHTML;
     document.getElementById("calendarTable").innerHTML = calendarHTML;
-}, 90);
+    }, 90);
     
     }
+

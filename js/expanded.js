@@ -90,8 +90,11 @@ if (titleHTML == "January") {
 
     // "titleHTML" is from calendar.js
     document.getElementById("expandedMonth").innerHTML = titleHTML;
-    document.getElementById("expandedDayNum").innerHTML = "The " + expandedDayNum;
+    document.getElementById("expandedDayNum").innerHTML = "The " + expandedDayNum + "    <span class='year-title-html'> " + yearTitleHTML + "</span>";
     }
+
+
+
 
     // Calculate Expanded Day Number/Superscript
 

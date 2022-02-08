@@ -20,6 +20,8 @@
     <script src="js/events.js" defer></script>
     <script src="js/calendar.js" defer></script>
     <script src="js/expanded.js" defer></script>
+    <script src="js/months.js" defer></script>
+    <script src="js/years.js" defer></script>
 </head>
 <body class="bg-light">
     <!-- Nav -->
@@ -64,16 +66,31 @@
     <!-- Title -->
     <div id="calendarWrapper">
 <div class="container">
+
+    <!-- VIEW MONTHS -->
     <div class="row">
-        <div class="col-2"></div>
+        <div class="col-2">
+            <a class="view-months-link" href="#" onclick="viewMonths();">
+                <i class="bi bi-chevron-left"></i>
+                <span>Months</span>
+            </a>
+        </div>
+        <div class="col-10"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-1"></div>
 
         <div class="col-1"><a href="#" class="bi bi-chevron-left switch-button" onclick="backMonth();"></a></div>
 
         <div class="col-6 text-center"><span class="month-title" id="monthTitle"></span></div>
 
+        <div class="col-2 text-center"><span class="year-title" id="yearTitle">0000</span></div>
+
         <div class="col-1"><a href="#" class="bi bi-chevron-right switch-button" onclick="forwardMonth();"></a></div>
 
-        <div class="col-2"></div>
+        <div class="col-1"></div>
 
 
     </div>

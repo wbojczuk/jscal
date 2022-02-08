@@ -32,6 +32,14 @@ nav {
     color: #ccc;
 }
 
+
+/* VIEW YEARS STYLING */
+
+.view-months-link {
+    font-size: 1.2vw;
+    color: #000;
+}
+
 /* Title Styling */
 
 .month-title {
@@ -40,6 +48,18 @@ nav {
     font-family: "Love Light", cursive;
 }
 
+.year-title {
+    display: inline-block;
+    font-size: 6em;
+    font-family: "Love Light", cursive;
+    position: relative;
+    margin-left: -6vw;
+    margin-top: 3vw;
+}
+
+.year-title-html {
+    font-size: 6vw;
+}
 
 .title-inside {
     display: inline-block;
@@ -60,7 +80,7 @@ nav {
 
 .day-col {
     border: 1px solid #aaa;
-    height: 10vw;
+    height: 9vw;
     background-color: aliceblue;
     font-size: .9em;
 }
@@ -71,7 +91,7 @@ nav {
 .highlightDay {
     background-color: #fff0f0;
     border: 1px solid #aaa;
-    height: 10vw;
+    height: 9vw;
     font-size: .9em;
 }
 .highlightDay:hover {
