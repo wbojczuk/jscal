@@ -14,7 +14,9 @@
 
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/months.css">
+    <link rel="stylesheet" href="css/years.css">
 
     <!-- My JavaScript -->
     <script src="js/events.js" defer></script>
@@ -63,11 +65,65 @@
 
 
 
-    <!-- Title -->
+
+<!-- EXPANDED MONTHS -->
+<div class="expanded-months center" id="expandedMonths">
+<div class="container">
+    <div class="row">
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(0);"><span>January</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(1);"><span>February</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(2);"><span>March</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(3);"><span>April</span></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(4);"><span>May</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(5);"><span>June</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(6);"><span>July</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(7);"><span>August</span></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(8);"><span>September</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(9);"><span>October</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(10);"><span>November</span></a>
+        </div>
+        <div class="col m-2 months-col">
+            <a href="#" class="months-link" id="monthsLink" onclick="setSelectedMonth(11);"><span>December</span></a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+    
     <div id="calendarWrapper">
 <div class="container">
 
-    <!-- VIEW MONTHS -->
+    <!-- VIEW MONTHS LINK-->
     <div class="row">
         <div class="col-2">
             <a class="view-months-link" href="#" onclick="viewMonths();">
@@ -79,15 +135,21 @@
     </div>
 
 
+<!-- Title -->
     <div class="row">
         <div class="col-1"></div>
 
+
+        <!-- BACK MONTH LINK -->
         <div class="col-1"><a href="#" class="bi bi-chevron-left switch-button" onclick="backMonth();"></a></div>
 
+        <!-- MONTH AND YEAR TITLES -->
         <div class="col-6 text-center"><span class="month-title" id="monthTitle"></span></div>
 
         <div class="col-2 text-center"><span class="year-title" id="yearTitle">0000</span></div>
 
+
+        <!-- FORWARD MONTH LINK -->
         <div class="col-1"><a href="#" class="bi bi-chevron-right switch-button" onclick="forwardMonth();"></a></div>
 
         <div class="col-1"></div>

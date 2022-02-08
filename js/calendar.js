@@ -263,11 +263,11 @@ thisDay = thisDate.getDay();
     titleHTML = calcMonthTitle();
      
 
-}, 10);
+}, 5);
     setTimeout(function() {
     calendarHTML = calendarTiles();
     yearTitleHTML = thisYear;
-}, 50);
+}, 5);
  
 setTimeout(function() {
     // PRINT VARIABLES
@@ -278,7 +278,7 @@ setTimeout(function() {
 document.getElementById("monthTitle").innerHTML = titleHTML;
 document.getElementById("weekdayHeader").innerHTML = headerHTML;
 document.getElementById("calendarTable").innerHTML = calendarHTML;
-}, 90);
+}, 5);
 
 }
 
@@ -320,11 +320,11 @@ function backMonth() {
         titleHTML = calcMonthTitle();
          
     
-    }, 10);
+    }, 5);
         setTimeout(function() {
         calendarHTML = calendarTiles();
         yearTitleHTML = thisYear;
-    }, 50);
+    }, 5);
      
     setTimeout(function() {
         // PRINT VARIABLES
@@ -335,7 +335,7 @@ function backMonth() {
     document.getElementById("monthTitle").innerHTML = titleHTML;
     document.getElementById("weekdayHeader").innerHTML = headerHTML;
     document.getElementById("calendarTable").innerHTML = calendarHTML;
-    }, 90);
+    }, 5);
     
     }
 
