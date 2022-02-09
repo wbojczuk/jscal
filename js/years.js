@@ -2,11 +2,8 @@
 
 // TO VIEW/GENERATE YEARS
 var years = new Array(0);
-var nextYears = new Array(0);
-var lastYears = new Array(0);
 var s = 0;
-var nextYearIndex = 0;
-var nextYear = 0;
+var tempYear = 0;
 
 
 
@@ -63,8 +60,9 @@ function viewYears() {
             }  
         }
     }
+    tempYear = years[0];
     document.getElementById("yearContainer").insertAdjacentHTML( 'beforeend', yearsHTML );
-    console.log(yearsHTML);
+    
 }
 
 
@@ -100,36 +98,16 @@ function forwardYear() {
     // RESET CELLS
 
     // Variable Declarations
-    
-    var counter = 0;
-    var nextYearsLength = nextYears.length;
-    var nextYearsLoop = nextYearsLength + 12;
-    
-    
-
-    while (s < 2) {
-        nextYearIndex = years.length - 1;
-        nextYear = years[nextYearIndex] + 1;
-    s += 1;
-    }
-
-    nextYearsLength = nextYears.length;
-
-    // Set Last Years Array Data
-    for (let i = nextYearsLength; i < nextYearsLoop; i++) {
-        nextYears[i] = nextYear;
-        years.push(nextYears[i]);
-        nextYear += 1;
-    }
-    console.log(years);
 
     document.querySelectorAll(".temp-year-el").forEach(el => el.remove());
+    var counter = 0;
     var yearsHTML = "<div class='temp-year-el row'>";
-
-    for (let i = nextYearsLength; i < nextYearsLoop; i++) {
-        var tempLength = i + 12;
-        yearsHTML += "<div class='temp-year-el col years-col m-1'><a href='#' class='temp-year-el years-link' onclick='showSelectedYear(" + tempLength + ");'>" + nextYears[i] + "</a></div>";
+    var tempDate = tempYear + 12;
+    for (let i = 0; i < 12; i++) {
+        years[i] = tempDate;
+        yearsHTML += "<div class='temp-year-el col years-col m-1'><a href='#' class='temp-year-el years-link' onclick='showSelectedYear(" + i + ");'>" + years[i] + "</a></div>";
         
+        tempDate += 1;
         counter += 1;
          
 
@@ -147,9 +125,41 @@ function forwardYear() {
 
     console.log(years);
     document.getElementById("yearContainer").insertAdjacentHTML( 'beforeend', yearsHTML );
+    tempYear = years[0];
+}
 
-    nextYearIndex = nextYears.length - 1;
-    nextYear = nextYears[nextYearIndex] + 1;
+// BACK YEAR
+
+function backYear() {
+    // RESET CELLS
+
+    // Variable Declarations
+
+    document.querySelectorAll(".temp-year-el").forEach(el => el.remove());
+    var counter = 0;
+    var yearsHTML = "<div class='temp-year-el row'>";
+    var tempDate = tempYear - 12;
+    for (let i = 0; i < 12; i++) {
+        years[i] = tempDate;
+        yearsHTML += "<div class='temp-year-el col years-col m-1'><a href='#' class='temp-year-el years-link' onclick='showSelectedYear(" + i + ");'>" + years[i] + "</a></div>";
+        
+        tempDate += 1;
+        counter += 1;
+         
+
+        if (counter % 4 == 0 ) {
+            
+            if (counter % 12 == 0){
+            yearsHTML += "</div>";
+            } else {
+                yearsHTML += "</div><div class='row'>";
+            }  
+        }
+
+    }
 
 
+    console.log(years);
+    document.getElementById("yearContainer").insertAdjacentHTML( 'beforeend', yearsHTML );
+    tempYear = years[0];
 }
