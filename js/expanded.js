@@ -131,5 +131,5 @@ if (titleHTML == "January") {
 
 function closeExpanded() {
     document.getElementById("expandedDay").style.display = "none";
-    document.getElementById("calendarWrapper").style.display = "initial";
+    document.getElementById("calendarWrapper").style.display = "block";
 }

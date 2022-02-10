@@ -50,5 +50,5 @@ document.getElementById("calendarTable").innerHTML = calendarHTML;
 
 
 document.getElementById("expandedMonths").style.display = "none";
-document.getElementById("calendarWrapper").style.display = "initial";
+document.getElementById("calendarWrapper").style.display = "block";
 }

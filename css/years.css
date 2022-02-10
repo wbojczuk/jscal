@@ -1,28 +1,62 @@
 .expanded-years {
     display: none;
     height: 100vh;
+    background-image: url("../img/expandbg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .years-col {
-    border: 1px solid #000;
+    background-color: rgba(238, 231, 231, 0.363);
+    color: #ccc;
     height: 10vw;
     width: 8vw;
+    border: 1px solid transparent;
+    border-radius: 1%;
+}
+.years-row {
+    margin-bottom: 4vw;
+    margin-right: 1vw;
 }
 
 .years-col:hover {
-    background-color: azure;
+    background-color: rgba(238, 231, 231, 0.637);
 }
 .view-years-link {
-    font-size: 1.5vw;
-    color: #000;
+    font-size: 2.5vw;
+    color: rgb(192, 191, 191);
+    padding: .3vw;
+    font-family: "Great Vibes", cursive;
+    text-decoration: none;
+
 }
+.view-years-link:hover {
+    color:rgb(158, 157, 157);
+}
+
+.view-years-row {
+    position: relative;
+    top: 2vw;
+    left: -6vw;
+}
+.view-years-link span i {
+    position: relative;
+    top: -.5vw;
+    left: .5vw;
+}
+
+.year-title {
+    position: relative;
+    left: 3vw;
+}
+
 
 .years-link {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #000;
+    color: #ccc;
     width: 100%;
     height: 100%;
     overflow: hidden;

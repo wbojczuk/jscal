@@ -121,11 +121,7 @@ var february = [
     //28
     [""],
     //29
-    [""],
-    //30
-    [""],
-    //31
-    [""],
+    ["Leap Year"],
 ];
 
 var march = [
@@ -645,7 +641,7 @@ var october = [
     //30
     [""],
     //31
-    [""],
+    ["Halloween"],
 ];
 
 var november = [

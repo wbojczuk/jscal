@@ -62,7 +62,7 @@ function calcWeekdays() {
     var dayNameLength = dayName.length;
     // Generate Header Tiles
     for (let i = 0; i < dayNameLength; i++) {
-        tempValue += "<div class='col weekday-header text-center'>" + dayName[i] + "</div>";
+        tempValue += "<div class='fw-bold col weekday-header text-center'>" + dayName[i] + "</div>";
     }
     return tempValue;
 }
@@ -103,6 +103,12 @@ function calendarTiles() {
     var weekDay = firstDay.getDay();
     var currentDayEvents = "";
     var currentDayLength = 0;
+
+
+    // SET MONTH BACKGROUND
+    document.getElementById("calendarWrapper").style.backgroundImage = "url('img/" + thisMonth + ".jpg')";
+    document.getElementById("calendarWrapper").style.backgroundSize = "cover";
+    document.getElementById("calendarWrapper").style.backgroundRepeat = "no-repeat";
     
 
 
@@ -187,7 +193,7 @@ function calendarTiles() {
                     
                     
                     if (currentMonthArray[tempNum][z] != ""){
-                    currentDayEvents += "<span class='middot'>&middot;</span>" + currentMonthArray[tempNum][z] + "<br>";
+                    currentDayEvents += "<i class='bi bi-calendar-event'></i>" + currentMonthArray[tempNum][z] + "<br>";
                     }
                 }
 

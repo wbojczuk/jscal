@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 body {
     margin: 0;
+    
 }
 
 /* Custom Classes */
@@ -12,50 +14,59 @@ body {
 }
 .text-right {
     text-align: right;
-    padding-right: 5vw;
+    padding-right: 3vw;
 }
 
 
 /* Switch buttons styling */
 
 .switch-button {
-    color: #000;
     font-size: 8em;
+    color: rgb(231, 230, 230);
 }
 
 .switch-button:hover {
-    color: #ccc;
+    color: rgb(158, 157, 157);
 }
 
 
 
 /* Title Styling */
 
+.titleWrapper {
+background-color: rgba(0, 0, 0, 0.205);
+}
+
+.titleAlign {
+    margin-left: -3vw;
+}
+
 .month-title {
     display: inline-block;
     font-size: 10em;
     font-family: "Love Light", cursive;
+    color: rgb(231, 230, 230);
 }
 
 .year-title {
     display: inline-block;
-    font-size: 6em;
+    font-size: 7em;
     font-family: "Love Light", cursive;
     position: relative;
     margin-left: -6vw;
     margin-top: 3vw;
+    color: rgb(231, 230, 230);
 }
 
 .year-title-html {
     font-size: 6vw;
-    border-left: 2px solid #000;
+    border-left: 2px solid rgb(192, 191, 191);
     margin-left: 2vw;
     padding-left: 2vw;
 }
 
 .title-inside {
     display: inline-block;
-    
     margin-bottom: 1vw;
     padding: 0 20vw;
     
@@ -63,36 +74,35 @@ body {
 
 /* HEADERS */
 .weekday-header {
-    border: 1px solid #aaa;
-    background-color: azure;
+    border: 1px solid rgb(80, 79, 79);
+    background-color: rgba(48, 48, 48, 0.384);
     width: 7vw;
+    color: #ccc;
 }
 
 /* Calendar Styling */
 
+.calendar {
+    padding-bottom: 5vw;
+}
+
 .day-col {
-    border: 1px solid #aaa;
+    
     height: 9vw;
-    background-color: aliceblue;
-    font-size: .9em;
+    background-color: rgba(168, 168, 168, 0.582);
+    font-size: 1em;
 }
 .day-col:hover {
     cursor: pointer;
-    background-color: #b3dbff;
+    background-color: #5396d1a9;
 }
 .highlightDay {
-    background-color: #fff0f0;
-    border: 1px solid #aaa;
+    background-color: #f57272a1;
     height: 9vw;
     font-size: .9em;
 }
 .highlightDay:hover {
-    background-color: #ffcccc;
-}
-
-/* EVENT MIDDOT STYLING */
-.middot {
-    font-size: 2em;
+    background-color: #ee6969c9;
 }
 
 /* Day Link Styling */
@@ -106,6 +116,10 @@ body {
     overflow: hidden;
 }
 
+.day-link:hover {
+    color: #000;
+}
+
 .event-tile {
     display: inline-block;
     font-size: 1.2em;
@@ -115,42 +129,59 @@ body {
 
 .expanded-day {
     display: none;
-    margin-top: 4vw;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/expandedday.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .expanded-col {
     height: 85vh;
 }
 .expanded-container {
+    margin-top: 5vw;
     width: 100%;
     height: 100%;
-    background-color: #aaa;
+    background-color: rgba(102, 102, 102, 0.548);
     border: 1px solid transparent;
-    border-radius: 1%;
+    border-radius: .5%;
+    color: rgb(231, 230, 230);
 }
 .expanded-title {
     font-family: "Love Light", cursive;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid rgb(192, 191, 191);
     border-radius: 1%;
     font-size: 7em;
 }
 
 /* EXPANDED EVENTS */
 
+
 .expanded-events-list {
+margin-left: 2vw;
 margin-top: 2vw;
 }
+
 .expanded-events-list li {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 /* CLOSE BUTTON */
 .close-expanded-button {
     font-size: 4em;
-    color: #000;
+    color: rgb(231, 230, 230);
     text-decoration: none;
 }
 
 .close-expanded-button:hover {
-    color: #ccc;
+    color: rgb(158, 157, 157);
 }
 
+
+/* SPECIFIC ICON CUSTOMS */
+
+.bi-calendar-event::before {
+    line-height: 1.5;
+    font-size: .8em;
+    padding-right: .3vw;
+}
