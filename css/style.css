@@ -89,7 +89,8 @@ background-color: rgba(0, 0, 0, 0.205);
 .day-col {
     
     height: 9vw;
-    background-color: rgba(168, 168, 168, 0.582);
+    background-color: rgba(196, 196, 196, 0.582);
+    border: 1px solid rgba(148, 147, 147, 0.603);
     font-size: 1em;
 }
 .day-col:hover {
